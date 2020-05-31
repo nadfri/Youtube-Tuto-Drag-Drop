@@ -1,0 +1,46 @@
+body{
+  margin: auto; /*centre le contenu de la page */
+}
+
+#container{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row; /*affichage des div en rangés                    */
+  flex-wrap: wrap;    /*permet le retour à la ligne si manque de place */
+}
+
+.draggable{
+    display: flex;            /*permet d'utiliser justify-content et align-items */
+    justify-content: center; /*aligmenent horizontale centré                    */
+    align-items: center;    /*aligmenent verticale centré                      */
+    margin: 1rem;
+    width: 20vw;
+    height: 20vw;
+    cursor: move;
+    transition: 0.2s; /* regle les effets de transition à 0.2s */
+    border: solid 5px teal;
+}
+
+.dragged{
+    opacity: 0.5;
+    border: dashed 5px gray;
+    transform: scale(1); /* remet l'effet zoom à la normal (x1) */
+}
+
+div .dragEffects{
+  transform: scale(1.3); /* applique un effet zoom de x1.3 */
+  border: solid 5px orange;
+}
+
+.shake{
+  animation: 0.5s shake; /*création personalisée d'une animation nommée shake */
+}
+
+@keyframes shake{                  /*detail du contenu de l'animation */
+20% {transform: translateX(2px);} /*translateX() permet une translation horizontale, ici 2px à 20% de la durée*/
+40% {transform: translateX(-4px);}
+60% {transform: translateX(4px);}
+80% {transform: translateX(-2px);}
+}
+
+
