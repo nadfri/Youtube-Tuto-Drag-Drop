@@ -9,7 +9,7 @@ body{
   flex-wrap: wrap;    /*permet le retour à la ligne si manque de place */
 }
 
-.draggable{
+.box{
     display: flex;            /*permet d'utiliser justify-content et align-items */
     justify-content: center; /*aligmenent horizontale centré                    */
     align-items: center;    /*aligmenent verticale centré                      */

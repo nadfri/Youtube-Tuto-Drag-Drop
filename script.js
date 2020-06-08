@@ -3,7 +3,7 @@ window.onload = ()=>
 
 /**Version avec dataTransfert.setData() */
 
-const divs = document.querySelectorAll(".draggable"); //selection de toutes les divs avec la classe draggable
+const divs = document.querySelectorAll(".box"); //selection de toutes les divs avec la classe draggable
 let dragged; //servira à stocker la div dragged
 for (let div of divs)
 {
@@ -42,7 +42,7 @@ for (let div of divs)
 }
 
 //****Version sans utiliser e.dataTransfer*********************************************** */
-// const divs = document.querySelectorAll(".draggable"); //selection de toutes les divs avec la classe draggable
+// const divs = document.querySelectorAll(".box"); //selection de toutes les divs avec la classe draggable
 // let dragged; //servira à stocker la div dragged
 
 // for (let div of divs)
