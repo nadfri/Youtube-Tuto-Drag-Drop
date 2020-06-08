@@ -11,7 +11,7 @@ for (let div of divs)
     { 
       dragged = div;                                       //copie de la div qui sera dragged
       div.classList.add("dragged");                       //ajout de la classe dragged
-      e.dataTransfer.setData('text', dragged.innerHTML); //option du drag permettant de sauvegarder le contenu du dragged
+      e.dataTransfer.setData('text/plain', dragged.innerHTML); //option du drag permettant de sauvegarder le contenu du dragged
     };
 
     //Applique un effet CSS à l'entrée d'une zone de drop
@@ -34,7 +34,7 @@ for (let div of divs)
     div.ondrop = (e) =>
     {
       dragged.innerHTML = div.innerHTML;                   //le dragged prend la valeur du drop
-      div.innerHTML     = e.dataTransfer.getData('text'); //le drop prend la valeur du dragged
+      div.innerHTML     = e.dataTransfer.getData('text/plain'); //le drop prend la valeur du dragged
       div.classList.remove('dragEffects');               //supprime la classe dragEffects
       div.classList.add("shake");                       //ajout de l'effet shake sur le drop
     };
