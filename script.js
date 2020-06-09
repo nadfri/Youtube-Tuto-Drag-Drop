@@ -1,4 +1,4 @@
-window.onload = ()=> 
+window.onload = () => 
 { "use strict";
 
 /**Version avec dataTransfert.setData() */
@@ -9,16 +9,16 @@ for (let div of divs)
 {
     div.ondragstart = (e) =>
     { 
-      dragged = div;                                       //copie de la div qui sera dragged
-      div.classList.add("dragged");                       //ajout de la classe dragged
-      e.dataTransfer.setData('text/plain', dragged.innerHTML); //option du drag permettant de sauvegarder le contenu du dragged
+      dragged = div;                   //copie la reference de la div qui sera dragged
+      div.classList.add("dragged");   //ajout de la classe dragged
+      e.dataTransfer.setData('text/plain', div.innerHTML); //option du drag permettant de sauvegarder le contenu du dragged
     };
 
     //Applique un effet CSS à l'entrée d'une zone de drop
     div.ondragenter = ()  =>
     {
       if (!div.classList.contains("dragged")) //si ce n'est pas l'element dragged
-          div.classList.add('dropHover'); //applique la classe dropHover
+          div.classList.add('dropHover');    //applique la classe dropHover
       div.classList.remove('shake');        //Supprime la classe shake si présente
     };
     //Applique un effet CSS à l'a sortie d'une zone de drop
@@ -28,7 +28,7 @@ for (let div of divs)
     div.ondragend   = ()  => div.classList.remove("dragged");  //supprime la classe dragged
 
     //Permet à la div d'etre une zone de drop (interdit par defaut)
-    div.ondragover   = (e) => e.preventDefault();
+    div.ondragover  = (e) => e.preventDefault();
 
     //Copie la div dragged à la zone du drop et applique un effet CSS dessus
     div.ondrop = (e) =>
@@ -36,9 +36,8 @@ for (let div of divs)
       dragged.innerHTML = div.innerHTML;                   //le dragged prend la valeur du drop
       div.innerHTML     = e.dataTransfer.getData('text/plain'); //le drop prend la valeur du dragged
       div.classList.remove('dropHover');               //supprime la classe dropHover
-      div.classList.add("shake");                       //ajout de l'effet shake sur le drop
+      div.classList.add("shake");                     //ajout de l'effet shake sur le drop
     };
-
 }
 
 //****Version sans utiliser e.dataTransfer*********************************************** */
